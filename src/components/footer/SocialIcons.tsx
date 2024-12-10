@@ -14,12 +14,25 @@ const SocialIcons: React.FC = () => {
   ];
 
   return (
-    <div className="flex space-x-4">
-      {socials.map((social, index) => (
-        <a key={index} href={social.link} aria-label={social.name}>
-          <img src={social.icon} alt={social.name} className="w-6 h-6" />
-        </a>
-      ))}
+    <div className="flex justify-end space-x-4">
+      <div className="flex flex-col gap-[12px]">
+        <div className="flex gap-[10px]">
+          {socials.map((social, index) => (
+            <a
+              key={index}
+              className="p-[10px]  border-[0.5px] border-[#bebebe] rounded-[6px]"
+              href={social.link}
+              aria-label={social.name}
+            >
+              <img
+                src={social.icon}
+                alt={social.name}
+                className="w-[22px] h-[22px]"
+              />
+            </a>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

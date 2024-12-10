@@ -1,7 +1,7 @@
 import React from "react";
-import SocialIcons from "./footer/SocialIcons";
-import LinksSection from "./footer/LinkSection";
-import Logo from "../../public/Logo";
+import SocialIcons from "../footer/SocialIcons";
+import LinksSection from "../footer/LinkSection";
+import Logo from "../../../public/Logo";
 
 const Footer: React.FC = () => {
   const infoLinks = [
@@ -26,19 +26,22 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-gray-100 py-8 border-t ">
-      <div className="container mx-auto px-8 grid grid-cols-4 gap-8">
-        <div>
+    <footer className="bg-gray-100 pt-8 border-t ">
+      <div className="max-w-screen pl-[30px] pr-[53px] items-center grid grid-cols-6 gap-8">
+        <div className="">
           <div className="mb-4">
-            <h2 className="font-bold text-lg">
+            <h2 className="font-bold text-lg ">
               <Logo />
             </h2>
           </div>
-          <SocialIcons />
         </div>
         <LinksSection title="INFOS PRATIQUES" links={infoLinks} />
         <LinksSection title="LÉGAL" links={legalLinks} />
         <LinksSection title="MON COMPTE" links={accountLinks} />
+        <div className="col-span-2 w-full flex justify-end flex-col gap-[12px]">
+          <h1 className="text-right">NOUS SUIVRE</h1>
+          <SocialIcons />
+        </div>
       </div>
     </footer>
   );

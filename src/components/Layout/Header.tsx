@@ -1,8 +1,8 @@
-import Logo from "../../public/Logo";
-import Navigation from "./Navigation";
-import Bulb from "../../public/Bulb";
-import Heart from "../../public/Heart";
-import CartLogo from "../../public/CartLogo";
+import Logo from "../../../public/Logo";
+import Navigation from "../Navigation";
+import Bulb from "../../../public/Bulb";
+import Heart from "../../../public/Heart";
+import CartLogo from "../../../public/CartLogo";
 export default function Header() {
   return (
     <nav className="h-[168px] w-full  justify-between flex flex-col border ">

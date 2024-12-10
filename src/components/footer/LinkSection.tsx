@@ -16,7 +16,7 @@ const LinksSection: React.FC<LinksSectionProps> = ({ title, links }) => {
       <h3 className="font-semibold mb-4">{title}</h3>
       <ul className="space-y-2">
         {links.map((link, index) => (
-          <li key={index}>
+          <li key={index} className="text-sm">
             <a href={link.href} className="hover:underline">
               {link.label}
             </a>
