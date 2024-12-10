@@ -11,9 +11,15 @@ const ProductPage: React.FC = () => {
     description:
       "Location appareil à raclette - Raclette traditionnelle 1/2 roue. Réglable en hauteur.",
     specs: [
-      { label: "Dimensions", value: "20cm x 50cm" },
-      { label: "Voltage", value: "220V" },
-      { label: "Power", value: "900W" },
+      {
+        label: {
+          Length: "20",
+          width: "50",
+          Voltage: "220V",
+          Power: "900W",
+        },
+        value: "Dimensions and power specifications",
+      },
     ],
     images: [
       "/raclette1.png",
@@ -28,9 +34,12 @@ const ProductPage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <ProductImageGallery images={product.images} />
+    <div className=" mx-auto p-6">
+      <div className="flex gap-[25px]">
+        <div className="flex gap-8 p-[10px] bg-[#F8F6F4] w-[761px] h-[652px] ">
+          <ProductImageGallery images={product.images} />
+          <div className="bg-[#F8F6F4] bg-[url('/Location_Cheese_Big_Picture_1.png')] bg-cover bg-blend-darken gap-1 w-[552px] h-[552px] p-[11px]"></div>
+        </div>
         <div>
           <ProductDetails
             title={product.title}

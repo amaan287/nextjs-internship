@@ -18,7 +18,7 @@ export default function Navigation() {
     <nav className=" py-2 px-8">
       <ul className="flex space-x-[38px]">
         {links.map((link, index) => (
-          <li key={index} className="text-sm ">
+          <li key={index} className="text-sm font-light  ">
             {link}
           </li>
         ))}

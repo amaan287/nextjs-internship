@@ -1,10 +1,15 @@
 import React from "react";
+import Scale from "../../../public/scale";
+import Width from "../../../public/width";
 
 interface ProductDetailsProps {
   title: string;
   price: number;
   description: string;
-  specs: { label: string; value: string }[];
+  specs: {
+    label: { Length: string; Voltage: string; width: string; Power: string };
+    value: string;
+  }[];
 }
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({
@@ -15,15 +20,30 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 }) => (
   <div className="mt-6 space-y-4">
     <h1 className="text-2xl font-semibold">{title}</h1>
-    <p className="text-lg font-bold text-green-600">{price}€ / piece</p>
-    <ul className="list-disc pl-5 space-y-1">
+    <p className="text-lg font-bold ">
+      {price}€ <span className="text-sm text-gray-300">/ piece</span>
+    </p>
+    <div className="border-t border-b">
       {specs.map((spec, index) => (
-        <li key={index}>
-          <strong>{spec.label}:</strong> {spec.value}
-        </li>
+        <div key={index} className="flex m-4 gap-2">
+          <p className="flex ">
+            <div className="flex">
+              <Scale />
+              {spec.label.Length}
+            </div>
+          </p>{" "}
+          <p className="flex ">
+            <div className="flex">
+              <Width />
+              {spec.label.width}
+            </div>
+          </p>{" "}
+        </div>
       ))}
-    </ul>
-    <p className="text-gray-700">{description}</p>
+    </div>
+    <p className="text-gray-700 text-xs">{description}</p>
+    <p className="text-gray-700 text-xs">{description}</p>
+    <p className="text-gray-700 text-xs">{description}</p>
   </div>
 );
 
